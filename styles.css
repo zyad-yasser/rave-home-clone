@@ -1,9 +1,272 @@
-html, body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
+html {
+	font-size: 62.5%;
 }
 
-body, body * {
-    font-family: 'Fjalla One', sans-serif;
+body {
+	font-size: 1rem;
+}
+
+html, body {
+	margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body,
+body *:not(i) {
+  font-family: 'Fjalla One', sans-serif;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.background video {
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.background .filter {
+  filter: blur(1px);
+  backdrop-filter: blur(50px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.content {
+	flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+	display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content .nav-bar {
+	width: 100%;
+  max-width: 1146px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto 10px auto;
+}
+
+.content .nav-bar .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content .nav-bar .actions .one-action {
+  font-size: 1.6rem;
+  color: #ffffff;
+  font-weight: 500 !important;
+  margin-left: 1rem;
+  padding: 0.3em;
+}
+
+.content .nav-bar .actions .one-action:hover {
+  cursor: pointer;
+}
+
+.content .footer *:not(i) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.content .footer {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+	margin: 3em 0;
+}
+
+.content .footer .policy {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.content .footer .links {
+  margin: 3em 0;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+.content .footer .social-icons {
+  margin: 3em 0;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.content .footer .social-icons .one-icon {
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+	background-size: 200% 200% !important;
+  background-position: center bottom !important;
+	transition: all .25s ease;
+}
+
+.content .footer .social-icons .one-icon:not(:nth-child(1)) {
+  margin-left: 1rem;
+}
+
+.content .footer .social-icons .one-icon:hover {
+  background-position: center top !important;
+	transition: all .25s ease;
+	cursor: pointer;
+}
+
+.content .footer .social-icons .one-icon.facebook {
+  background: linear-gradient(0deg, #4267b2 0%, #7a92c2 50%, #4267b2 100%);
+}
+
+.content .footer .social-icons .one-icon.instagram {
+  background: linear-gradient(0deg, #f2026b 0%, #ff8aaf 50%, #f2026b 100%);
+}
+
+.content .footer .social-icons .one-icon.twitter {
+  background: linear-gradient(0deg, #1da1f2 0%, #72bfee 50%, #1da1f2 100%);
+}
+
+.content .footer .social-icons .one-icon.youtube {
+  background: linear-gradient(0deg, #ff0000 0%, #ff6b6b 50%, #ff0000 100%);
+}
+
+.content .main {
+  flex-grow: 1;
+	width: 100vw;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.content .screens {
+  display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	max-width: 90%;
+	width: 100%;
+	margin: auto;
+}
+
+.content .screens .one-wrapper .one-media-wrapper {
+  justify-content: center;
+	transition: 0.5s all ease;
+}
+
+.content .screens .one-wrapper .one-media-wrapper:hover {
+  transform: scale(1.1);
+	transition: 0.5s all ease;
+	cursor: pointer;
+}
+
+.content .screens .one-wrapper img, video {
+  position: absolute;
+	width: 100%;
+}
+
+.content .screens .one-wrapper video {
+  margin: auto;
+}
+
+.content .screens .one-wrapper img {
+  z-index: 1;
+	max-width: 100%;
+	min-width: 99%;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, 0);
+}
+
+.content .screens .one-wrapper .text {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+  font-size: max(2rem, min(4rem, 2vw));
+	color: white;
+	margin-top: 1em;
+	position: absolute;
+}
+
+.content .screens .one-wrapper .text i {
+  margin-right: 10px;
+}
+
+.content .screens .one-wrapper.mac {
+  width: 27vw;
+}
+
+.content .screens .one-wrapper.mac video {
+  top: -2.3vw;
+}
+
+.content .screens .one-wrapper.one-wrapper.iphone video {
+  top: 0px;
+	border-radius: 15px
+}
+
+.content .screens .one-wrapper.one-wrapper.android video {
+  top: 0px;
+	border-radius: 12px
+}
+
+.content .screens .one-wrapper.one-wrapper.windows video {
+  top: -4.2vw;
+}
+
+.content .screens .one-wrapper.iphone {
+	width: 9vw;
+}
+
+.content .screens .one-wrapper.android {
+	width: 9vw;
+}
+
+.content .screens .one-wrapper.windows {
+	width: 27vw;
+}
+
+.content .main .heading {
+	color: #ffffff;
+	font-size: max(4em, min(7vw, 10em));
+	font-weight: 600;
+	letter-spacing: 2px;
 }
